@@ -1,2 +1,1 @@
-For school use ig
-#
+Ilicid.GitHub.io
