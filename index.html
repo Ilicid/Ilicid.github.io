@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Page Title</title>
-<!-- herunder er links til stylesheets - der kan være mange -->
-<link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="css/styles1.css">
-</head>
-<body>
-<!-- her starter alle tags i html -->
-<h1 id="head1">This is a Heading</h1>
-<p class="para1">This is a paragraph.</p>
-<div class="leftside">This is a group
-    <p id="divText">This is text within div</p>
-    <img id="research1" src="images/research1.png"/>
-</div>
-<!-- før javascript afslutter du alle tags undtagen body og html -->
-<!-- herunder skriver du links til alle javascript filer, som du skal bruge -->
-<script src="js/main.js"></script>
-<script src="js/main1.js"></script>
+<header>
+    <title>Simple Calculator</title>
+    <style>
+        .calculator {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 200px;
+        }
+        .display {
+            width: 100%;
+            height: 40px;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+    </style>
+</header>
+    <body>
+        <h1>Simple Calculator</h1>
+        <input type="text" id="inputField" placeholder="Enter numbers" />
+        <button id="plus" onclick="addOperator('+')">+</button>
+        <button id="minus" onclick="addOperator('-')">-</button>
+        <button id="equal" onclick="calculate()">=</button>
+        <br>
+        <input type="text" id="resultField" readonly/>
+    <script>
+    function addOperator(operator) {
+    const inputField = document.getElementById('inputField');
+    inputField.value += operator;
+    }
 
+    function calculate() {
+        const inputField = document.getElementById('inputField');
+        const resultField = document.getElementById('resultField');
+        try {
+        resultField.value = eval(inputField.value);
+        } catch (e) {
+        resultField.value = 'Error';
+        }
+    }
+</script>
 </body>
 </html>
