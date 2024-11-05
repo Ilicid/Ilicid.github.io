@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
 <head>
@@ -10,18 +10,12 @@
 </head>
 
 <body>
-<!-- her starter alle tags i html -->
-<h1 id="head1">This is a Heading</h1>
-<p class="para1">This is a paragraph.</p>
-<div class="leftside">This is a group
-    <p id="divText">This is text within div</p>
-    <img id="research1" src="images/research1.png"/>
-</div>
-<!-- før javascript afslutter du alle tags undtagen body og html -->
-<!-- herunder skriver du links til alle javascript filer, som du skal bruge -->
-<script src="js/main.js"></script>
-<script src="js/main1.js"></script>
-
+<h1>Simple Calculator</h1>
+    <input type="text" id="inputField" placeholder="Enter numbers" />
+    <button id="plus" onclick="addOperator('+')">+</button>
+    <button id="minus" onclick="addOperator('-')">-</button>
+    <button id="equal" onclick="calculate()">=</button>
+    <br>
+    <input type="text" id="resultField" readonly />
 </body>
-
 </html>
